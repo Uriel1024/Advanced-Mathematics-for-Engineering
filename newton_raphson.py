@@ -4,9 +4,6 @@ def evaluar(funcion, derivada,x, polinomio):
 		cociente += funcion[i]*(x**i)
 		residuo += derivada[i]*(x**i)
 	return x - (cociente/residuo)
-
-def calcular_error(x,x_0):
-	return abs(x - x_0)
 x0 = float(input("Ingresa x_0:"))	
 error = float(input('Ingresa el error: '))
 polinomio = int(input("Ingresa el grado mas alto del polinomio:"))
@@ -20,10 +17,9 @@ for i in range(polinomio):
 		continue
 	else:
 		derivada[i-1] = raices[i] * i 
-
 x = evaluar(raices,derivada,x0,polinomio)
 j = 0
-while calcular_error(x,x0) > error: 
+while abs(x - x0) > error: 
 	x0 = x
 	x = evaluar(raices,derivada,x0,polinomio) 
 	j+=1
