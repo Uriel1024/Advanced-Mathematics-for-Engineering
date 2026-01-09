@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 #obtener para la funcion 
 def get_c2(paso,c0,c1,c2):
@@ -38,7 +36,7 @@ print(f"El valor de c0 es de {c0f} con un error de {abs(c0f - c0)}, en la iterac
 print(f"El valor de c1 es de {c1f} con un error de {abs(c1f - c1)}, en la iteracion {ite}")
 print(f"El valor de c2 es de {c2f} con un error de {abs(c2f - c2)}, en la iteracion {ite} \n\n")
 
-
+    
 
 while (abs(c1f - c1) >= tol) or (abs(c0f - c0) >= tol) or (abs(c2f - c2) >= tol):
     ite += 1
@@ -46,7 +44,7 @@ while (abs(c1f - c1) >= tol) or (abs(c0f - c0) >= tol) or (abs(c2f - c2) >= tol)
     c0f = get_c0(paso,c0,c1,c2)
     c1f = get_c1(paso,c0,c1,c2)
     c2f = get_c2(paso,c0,c1,c2)
-
+ 
 
 print(f"El valor de c0 en es de {c0f} con un error de {abs(c0f - c0)}, en la iteracion {ite}")
 print(f"El valor de c1 en es de {c1f} con un error de {abs(c1f - c1)}, en la iteracion {ite}")

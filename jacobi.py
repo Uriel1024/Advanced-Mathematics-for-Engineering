@@ -10,6 +10,7 @@ def get_x1(matriz, soluciones, x1):
                 continue
             total[i] += matriz[i][j] * x1[j]
         total[i] = (1 / matriz[i][i]) * (soluciones[i] - total[i])
+
     return total
 
 def error(tol,xi,xf):
@@ -19,44 +20,40 @@ def error(tol,xi,xf):
             validar[i] = True   
     return validar
 
-
 """
-matriz = [[2.33, -1.4271], [13.1582, 12.21], ]
-sol = [-33.4752, 142.0952]
+matriz = [[2.3572, -1.4271], [13.1582, 12.21], ]
+sol = [-33.4752, 141.0952]
 xi = [1, 1]
 tol = .01
 
-
+    
 xf = get_x1(matriz, sol, xi)
 tabla = error(tol,xi,xf)
 ite = 1
 """
+
 if __name__ == '__main__':
-    n = int(input("Ingresa el tamanio de la matriz: "))
-    matriz = [[0 for _ in range(n)]for _ in range(n)]
-    sol = []
-    xi = [] 
-    for a in range(n):
-        for b in range(n):
-            matriz[a][b] = float(input(f"Ingresa el valor del coeficiente a{a+1}{b+1} de la matriz: "))
-        sol.append(float(input(f"Ingresa el valor de b{a+1} :")))
-        xi.append(float(input(f"Ingresa el valor de x{a+1} inicial: ")))
-    tol = float(input("Ingresa el valor de la tolerancia: "))
-    ite = 1
+
+
+    print(f"El determinante de la matriz es {np.linalg.det(D)}\n\n\n")
+    print(f"La matriz inversa es : {np.linalg.inv(D)}\n\n\n")
+    print(f"La matriz $ es: {np.dot(D,sol)}")
+
+
     xf = get_x1(matriz,sol,xi)
-
     tabla = error(tol,xi,xf)
-
-
+    
     for j in range(n):
-        print(f"El valor de x{j} en la iteracion {ite} es de: {xf[j]}")
+        print(f"El valor de x{j+1} en la iteracion {ite} es de: {xf[j]}")
     print("\n\n\n")
+
+
 
     while (False in tabla):
         ite += 1
         xi = xf 
         xf = get_x1(matriz,sol,xi)
         tabla = error(tol,xi,xf)
-
-    for j in range(n):
-        print(f"El valor de x{j} en la iteracion {ite} es de: {xf[j]}")
+        for j in range(n):
+            print(f"El valor de x{j+1} en la iteracion {ite} es de: {xf[j]}")
+        print("\n\n\n")

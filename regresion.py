@@ -26,7 +26,7 @@ c1f = get_c1(paso,c0,c1)
 
 
 print(f"El valor de c0 es de {c0f} con un error de {abs(c0f - c0)}, en la iteracion {ite}")
-print(f"El valor de c0 es de {c1} con un error de {abs(c1f - c1)}, en la iteracion {ite}")
+print(f"El valor de c1 es de {c1} con un error de {abs(c1f - c1)}, en la iteracion {ite}\n\n")
 
 
 while (abs(c1f - c1) > tol) or (abs(c0f - c0) > tol):
@@ -35,5 +35,9 @@ while (abs(c1f - c1) > tol) or (abs(c0f - c0) > tol):
     c0f = get_c0(paso,c0,c1)
     c1f = get_c1(paso,c0,c1)
     
+    print(f"El valor de c0 en es de {c0f} con un error de {abs(c0f - c0)}, en la iteracion {ite}")
+    print(f"El valor de c1 en es de {c1} con un error de {abs(c1f - c1)}, en la iteracion {ite}\n\n")
+
+
 print(f"El valor de c0 en es de {c0f} con un error de {abs(c0f - c0)}, en la iteracion {ite}")
-print(f"El valor de c1 en es de {c1} con un error de {abs(c1f - c1)}, en la iteracion {ite}")
+print(f"El valor de c1 en es de {c1} con un error de {abs(c1f - c1)}, en la iteracion {ite}\n\n")

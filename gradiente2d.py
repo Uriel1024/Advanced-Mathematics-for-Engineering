@@ -19,12 +19,15 @@ def maximizar(x,y,paso):
 tolerancia , x0,y0, paso,ite = .01,.5, .5, .2, 1
 x1,y1 = minimizar(x0,y0,paso)
 
+print(f"El valor de x es {x1}, el de y es {y1} en la {ite} iteracion con un error de {np.sqrt((x0 - x1)**2  + (y0 - y1)**2 )}\n\n")
+
+
 while np.sqrt((x0 - x1)**2  + (y0 - y1)**2 )  >= tolerancia:	
 	ite += 1
-	print(f"El valor de x es {x1}, el de y es {y1} en la {ite} iteracion con un error de {np.sqrt((x0 - x1)**2  + (y0 - y1)**2 )}\n\n")
 	x0 = x1
 	y0 = y1
 	x1,y1 = minimizar(x0,y0,paso)
+	print(f"El valor de x es {x1}, el de y es {y1} en la {ite} iteracion con un error de {np.sqrt((x0 - x1)**2  + (y0 - y1)**2 )}\n\n")
 
 
 print("Maximizacion \n\n\n\n\n")
